@@ -31,6 +31,15 @@
   .svc b { color:#1f2937; font-size:15.5px; }
   .svc p { margin:2px 0 0; color:#5a646e; font-size:14px; }
   .wabtn { display:block; text-align:center; margin-top:12px; background:#16a34a; color:#fff; font-weight:700; font-size:15px; padding:11px 18px; border-radius:24px; text-decoration:none; }
+  .cslider { background:#fff; border-radius:16px; box-shadow:0 2px 10px rgba(20,83,45,.08); padding:18px 16px 12px; }
+  .ccard { display:none; }
+  .ccard.on { display:block; animation:cfade .45s ease; }
+  @keyframes cfade { from { opacity:0; } to { opacity:1; } }
+  .ccard h3 { font-size:16.5px; color:#14532d; margin:0 0 10px; }
+  .ptag { display:inline-block; background:#f0fdf4; color:#16a34a; border:1px solid #16a34a; font-size:11.5px; font-weight:700; padding:1px 9px; border-radius:11px; vertical-align:middle; }
+  .cnav { display:flex; align-items:center; justify-content:space-between; margin-top:12px; }
+  .cnav .dots { padding:0; }
+  .cbtn { width:38px; height:38px; border-radius:50%; border:1px solid #bbf7d0; background:#f0fdf4; color:#14532d; font-size:22px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0 0 3px; font-family:inherit; }
   .case h3 { font-size:16.5px; color:#14532d; margin-bottom:10px; }
   .case .step { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:12px; padding:10px 12px; }
   .case .tag { display:inline-block; background:#16a34a; color:#fff; font-size:12.5px; font-weight:700; padding:2px 10px; border-radius:11px; margin-bottom:6px; }
@@ -159,13 +168,40 @@
 
   <section>
     <h2>কেস স্টাডি</h2>
-    <div class="card case">
-      <h3>মডেল গ্রাম — সমন্বিত বসতভিটা চাষ</h3>
-      <div class="step"><span class="tag">১ · সমস্যা</span><p>অনেক কৃষক পরিবারের বসতভিটার আশপাশের জমি অব্যবহৃত পড়ে থাকে — ফলে পরিবারের পুষ্টির সুযোগ ও বাড়তি আয়ের পথ বন্ধ থাকে।</p></div>
-      <div class="arrow">▼</div>
-      <div class="step"><span class="tag">২ · আমার সমাধান</span><p>মাঠ সংযুক্তি প্রশিক্ষণে বাড়ি নং-০৪ মডেল গ্রাম সরেজমিনে পর্যবেক্ষণ ও ডকুমেন্টেশন করি — পরিকল্পিত জোনিং (নিরাপদ সবজি বাগান, মিশ্র ফল বাগান, মসলা বাগান), ভার্মিকম্পোস্ট উৎপাদন, বর্জ্য ও পুষ্টি ব্যবস্থাপনা এবং ঔষধি গাছের বাগানসহ এর উপাদানগুলো অধ্যয়ন করে সহজ ভাষায় উপস্থাপন করি।</p></div>
-      <div class="arrow">▼</div>
-      <div class="step"><span class="tag">৩ · ফলাফল</span><p>এই মডেল অনুসরণে একটি পরিবার নিজের বসতভিটা থেকেই সারা বছর নিরাপদ সবজি, ফল ও মসলা পায়, উদ্বৃত্ত বিক্রি করে বাড়তি আয় করে এবং রাসায়নিক সারের ওপর নির্ভরতা কমায় (কৃষি সম্প্রসারণ অধিদপ্তরের প্রকল্প-নকশা অনুযায়ী)।</p></div>
+    <div class="cslider" data-cslider>
+      <div class="ccard case on">
+        <h3>মডেল গ্রাম — সমন্বিত বসতভিটা চাষ</h3>
+        <div class="step"><span class="tag">১ · সমস্যা</span><p>অনেক কৃষক পরিবারের বসতভিটার আশপাশের জমি অব্যবহৃত পড়ে থাকে — ফলে পরিবারের পুষ্টির সুযোগ ও বাড়তি আয়ের পথ বন্ধ থাকে।</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">২ · আমার সমাধান</span><p>মাঠ সংযুক্তি প্রশিক্ষণে বাড়ি নং-০৪ মডেল গ্রাম সরেজমিনে পর্যবেক্ষণ ও ডকুমেন্টেশন করি — পরিকল্পিত জোনিং (নিরাপদ সবজি বাগান, মিশ্র ফল বাগান, মসলা বাগান), ভার্মিকম্পোস্ট উৎপাদন, বর্জ্য ও পুষ্টি ব্যবস্থাপনা এবং ঔষধি গাছের বাগানসহ এর উপাদানগুলো অধ্যয়ন করে সহজ ভাষায় উপস্থাপন করি।</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">৩ · ফলাফল</span><p>এই মডেল অনুসরণে একটি পরিবার নিজের বসতভিটা থেকেই সারা বছর নিরাপদ সবজি, ফল ও মসলা পায়, উদ্বৃত্ত বিক্রি করে বাড়তি আয় করে এবং রাসায়নিক সারের ওপর নির্ভরতা কমায় (কৃষি সম্প্রসারণ অধিদপ্তরের প্রকল্প-নকশা অনুযায়ী)।</p></div>
+      </div>
+      <div class="ccard case">
+        <h3>জরিপ প্লট — ধান ফসলের অবস্থা জরিপ</h3>
+        <div class="step"><span class="tag">১ · সমস্যা</span><p>কোন এলাকায় ফসলের অবস্থা কেমন, কৃষক কোন সমস্যায় আছে — সঠিক মাঠতথ্য ছাড়া কৃষি সম্প্রসারণের পরিকল্পনা দুর্বল হয়।</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">২ · আমার কাজ</span><p>মাঠ সংযুক্তি প্রশিক্ষণে কৃষি সম্প্রসারণ অধিদপ্তরের জরিপ প্লট কার্যক্রমে দলগতভাবে অংশ নিই — ধানক্ষেত পর্যবেক্ষণ ও ফসলের অবস্থা যাচাইয়ে সহায়তা করি।</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">৩ · ফলাফল</span><p>জরিপের তথ্যের ভিত্তিতে এলাকার ফসল পরিস্থিতি মূল্যায়ন ও কৃষক-সহায়তার পরিকল্পনা করা যায় (কৃষি সম্প্রসারণ অধিদপ্তরের কার্যক্রম অনুযায়ী)।</p></div>
+      </div>
+      <div class="ccard case">
+        <h3>কারেন্ট পোকা — কৃষক সচেতনতা ও সঠিক দমন পদ্ধতি</h3>
+        <div class="step"><span class="tag">১ · সমস্যা</span><p>ধানের কারেন্ট পোকা (ব্রাউন প্ল্যান্টহপার) অনেক কৃষক ঠিকমতো চিনতে পারেন না; ভুল ধারণা থেকে ভুল দমন পদ্ধতিতে ক্ষতি আরও বেড়ে যায়।</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">২ · আমার কাজ</span><p>মাঠে কৃষকদের পরামর্শ দিই এবং সহজ বাংলায় ব্যাখ্যামূলক ভিডিও কনটেন্ট তৈরি করি — সারি পদ্ধতিতে রোপণ, লগ পদ্ধতি এবং আলোর ফাঁদ ক্ষেতের ভেতরে বা পাশে না বসানোর সঠিক নিয়মসহ।</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">৩ · ফলাফল</span><p>কৃষকরা পোকা শনাক্তকরণ ও সঠিক দমন পদ্ধতি সম্পর্কে সচেতন হয় — অনুমাননির্ভর স্প্রে কমে এবং ফসল রক্ষায় সঠিক সিদ্ধান্ত নেওয়া সহজ হয়।</p></div>
+      </div>
+      <div class="ccard case">
+        <h3>নগর কৃষি — ছাদ বাগান</h3>
+        <div class="step"><span class="tag">১ · সমস্যা</span><p>বাড়ির আশপাশে চাষের জায়গা না থাকায় পরিবারকে সবজির জন্য পুরোপুরি বাজারের ওপর নির্ভর করতে হয় — দামও বেশি, নিরাপত্তাও অনিশ্চিত।</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">২ · আমার কাজ</span><p>বাড়ির ছাদে টব, ড্রাম ও বেডে কয়েক ধরনের সবজি চাষ করি — লাউ, কুমড়া, ঢেঁড়স, বেগুন, মরিচ, টমেটো ও পুঁইশাকসহ; গাছের যত্ন ও পুষ্টি ব্যবস্থাপনা নিজেই দেখি।</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">৩ · ফলাফল</span><p>ছাদের সবজিতে পরিবারের চাহিদা মিটেছে — উদ্বৃত্ত সবজি বিক্রিও করা হয়েছে।</p></div>
+      </div>
+      <div class="cnav"><button class="cbtn prev" type="button" aria-label="আগের কেস">‹</button><div class="dots"></div><button class="cbtn next" type="button" aria-label="পরের কেস">›</button></div>
     </div>
   </section>
 
@@ -282,13 +318,40 @@
 
   <section>
     <h2>Case Studies</h2>
-    <div class="card case">
-      <h3>Model Village — Integrated Homestead Farming</h3>
-      <div class="step"><span class="tag">1 · Problem</span><p>Many farm families leave the land around their homesteads unused — losing the chance for family nutrition and extra income.</p></div>
-      <div class="arrow">▼</div>
-      <div class="step"><span class="tag">2 · My Action</span><p>During field attachment training, I observed and documented Model Village House No. 04 on site — studying and presenting its components in simple language: planned zoning (safe vegetable garden, mixed fruit orchard, spice garden), vermicompost production, waste &amp; nutrient management, and a medicinal plant garden.</p></div>
-      <div class="arrow">▼</div>
-      <div class="step"><span class="tag">3 · Result</span><p>Following this model, a family gets safe vegetables, fruits and spices year-round from its own homestead, earns extra income from surplus produce, and reduces dependence on chemical fertilizers (as designed under the DAE project).</p></div>
+    <div class="cslider" data-cslider>
+      <div class="ccard case on">
+        <h3>Model Village — Integrated Homestead Farming</h3>
+        <div class="step"><span class="tag">1 · Problem</span><p>Many farm families leave the land around their homesteads unused — losing the chance for family nutrition and extra income.</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">2 · My Action</span><p>During field attachment training, I observed and documented Model Village House No. 04 on site — studying and presenting its components in simple language: planned zoning (safe vegetable garden, mixed fruit orchard, spice garden), vermicompost production, waste &amp; nutrient management, and a medicinal plant garden.</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">3 · Result</span><p>Following this model, a family gets safe vegetables, fruits and spices year-round from its own homestead, earns extra income from surplus produce, and reduces dependence on chemical fertilizers (as designed under the DAE project).</p></div>
+      </div>
+      <div class="ccard case">
+        <h3>Survey Plot — Paddy Crop Condition Survey</h3>
+        <div class="step"><span class="tag">1 · Problem</span><p>Without accurate field data on crop conditions and the problems farmers face, agricultural extension planning stays weak.</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">2 · My Action</span><p>During field attachment training, I took part in the DAE survey-plot activities in a team — helping observe paddy fields and assess crop condition.</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">3 · Result</span><p>Survey data supports assessment of the area's crop situation and planning of farmer support (as per DAE programme practice).</p></div>
+      </div>
+      <div class="ccard case">
+        <h3>Brown Planthopper — Farmer Awareness &amp; Correct Control</h3>
+        <div class="step"><span class="tag">1 · Problem</span><p>Many farmers cannot identify the brown planthopper in rice correctly; wrong ideas lead to wrong control methods and bigger losses.</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">2 · My Action</span><p>I advise farmers in the field and create simple Bengali explainer videos — covering line planting, the log (perching) method, and the correct light-trap rule: never place it inside or beside the crop field.</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">3 · Result</span><p>Farmers become aware of correct identification and control methods — reducing guess-based spraying and making crop-protection decisions easier.</p></div>
+      </div>
+      <div class="ccard case">
+        <h3>Urban Agriculture — Rooftop Garden</h3>
+        <div class="step"><span class="tag">1 · Problem</span><p>With no growing space around the house, the family depended entirely on the market for vegetables — costlier, and safety uncertain.</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">2 · My Action</span><p>I grew several vegetables on our home rooftop in pots, drums and beds — bottle gourd, pumpkin, okra, brinjal, chili, tomato and Malabar spinach — managing their care and nutrition myself.</p></div>
+        <div class="arrow">▼</div>
+        <div class="step"><span class="tag">3 · Result</span><p>The rooftop harvest met the family's vegetable needs — and the surplus was sold as well.</p></div>
+      </div>
+      <div class="cnav"><button class="cbtn prev" type="button" aria-label="Previous case">‹</button><div class="dots"></div><button class="cbtn next" type="button" aria-label="Next case">›</button></div>
     </div>
   </section>
 
@@ -351,6 +414,42 @@ document.querySelectorAll('[data-slider]').forEach(function (root) {
     slides[i].classList.add('on'); dots[i].classList.add('on');
   }
   function start() { if (!reduce && !timer) timer = setInterval(function () { if (root.offsetParent !== null && !document.hidden) go(i + 1); }, 4000); }
+  function stop() { clearInterval(timer); timer = null; }
+  function restart() { stop(); start(); }
+  root.querySelector('.prev').addEventListener('click', function () { go(i - 1); restart(); });
+  root.querySelector('.next').addEventListener('click', function () { go(i + 1); restart(); });
+  root.addEventListener('pointerenter', stop);
+  root.addEventListener('pointerleave', start);
+  root.addEventListener('touchstart', stop, { passive: true });
+  var x0 = null;
+  root.addEventListener('pointerdown', function (e) { x0 = e.clientX; });
+  root.addEventListener('pointerup', function (e) {
+    if (x0 === null) return;
+    var dx = e.clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) { go(dx < 0 ? i + 1 : i - 1); restart(); }
+  });
+  start();
+});
+document.querySelectorAll('[data-cslider]').forEach(function (root) {
+  var cards = root.querySelectorAll('.ccard');
+  var dotsBox = root.querySelector('.dots');
+  var i = 0, timer = null;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  cards.forEach(function (_, k) {
+    var d = document.createElement('button');
+    d.type = 'button';
+    d.setAttribute('aria-label', (k + 1) + ' / ' + cards.length);
+    if (k === 0) d.classList.add('on');
+    d.addEventListener('click', function () { go(k); restart(); });
+    dotsBox.appendChild(d);
+  });
+  var dots = dotsBox.querySelectorAll('button');
+  function go(n) {
+    cards[i].classList.remove('on'); dots[i].classList.remove('on');
+    i = (n + cards.length) % cards.length;
+    cards[i].classList.add('on'); dots[i].classList.add('on');
+  }
+  function start() { if (!reduce && !timer) timer = setInterval(function () { if (root.offsetParent !== null && !document.hidden) go(i + 1); }, 6500); }
   function stop() { clearInterval(timer); timer = null; }
   function restart() { stop(); start(); }
   root.querySelector('.prev').addEventListener('click', function () { go(i - 1); restart(); });
