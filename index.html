@@ -317,6 +317,50 @@ html.anim .rv.in{opacity:1;transform:none}
   #bn > header video.hero-bg + img, #en > header video.hero-bg + img, #bn > header .title, #en > header .title, #bn > header .sub, #en > header .sub, #bn > header .loc, #en > header .loc, #bn > header .social, #en > header .social, #bn > header .cvbtn, #en > header .cvbtn{animation:none !important}
 }
 </style>
+
+<style>
+/* ===== প্রজেক্ট স্লাইডার (কাজের প্যানেল) ===== */
+.ps-stage{position:relative;overflow:hidden;color:#fff;border-radius:24px;margin:2px 0 18px;
+  display:flex;flex-direction:column;justify-content:center;padding:46px 18px 86px;min-height:580px;
+  transition:background 1s ease;text-align:center}
+.ps-stage[data-i="0"]{background:radial-gradient(120% 130% at 85% -10%,#2b83c4 0%,#0e6396 42%,#063a5e 100%)}
+.ps-stage[data-i="1"]{background:radial-gradient(120% 130% at 85% -10%,#1fae5f 0%,#0c8a44 45%,#065c2c 100%)}
+.ps-stage[data-i="2"]{background:radial-gradient(120% 130% at 85% -10%,#f472b6 0%,#db2777 45%,#8f1749 100%)}
+.ps-giant{position:absolute;top:4%;left:50%;transform:translateX(-50%);font-family:'Baloo Da 2',cursive;
+  font-weight:800;font-size:clamp(44px,12.5vw,128px);line-height:1.1;white-space:nowrap;color:transparent;
+  -webkit-text-stroke:1.5px rgba(255,255,255,.22);pointer-events:none;user-select:none}
+.ps-num{position:relative;font-weight:700;font-size:14px;letter-spacing:.35em;opacity:.85;text-align:left}
+.ps-visual{position:relative;display:flex;justify-content:center;margin:24px 0 6px;perspective:900px}
+.ps-mock{width:min(320px,84vw);border-radius:16px;background:#fff;color:#12233a;text-align:left;
+  box-shadow:0 34px 60px -18px rgba(0,0,0,.5);overflow:hidden}
+.ps-bar{display:flex;gap:6px;align-items:center;background:#eef2f7;padding:9px 12px}
+.ps-bar i{width:9px;height:9px;border-radius:50%;background:#c3cedb;display:block}
+.ps-url{margin-left:6px;font-size:11px;color:#5a6f88;background:#fff;border-radius:99px;padding:2px 10px}
+.ps-body{padding:18px 18px 20px}
+.ps-logo{font-family:'Baloo Da 2',cursive;font-weight:800;font-size:21px}
+.ps-line{height:8px;border-radius:99px;background:#e6edf5;margin-top:10px}
+.ps-line.s{width:62%}.ps-line.m{width:84%}.ps-line.m2{width:74%}
+.ps-cta{display:inline-block;margin-top:14px;font-size:12.5px;font-weight:700;color:#fff;border-radius:99px;padding:6px 14px}
+.ps-stage[data-i="0"] .ps-logo{color:#0e6396}.ps-stage[data-i="0"] .ps-cta{background:#0e6396}
+.ps-stage[data-i="1"] .ps-logo{color:#0c8a44}.ps-stage[data-i="1"] .ps-cta{background:#0c8a44}
+.ps-stage[data-i="2"] .ps-logo{color:#db2777}.ps-stage[data-i="2"] .ps-cta{background:#db2777}
+.ps-swap{animation:psIn .85s cubic-bezier(.2,.8,.25,1) both}
+@keyframes psIn{from{opacity:0;transform:translateX(64px) rotate(3.5deg) scale(.94)}to{opacity:1;transform:translateX(0) rotate(-1.2deg) scale(1)}}
+.ps-txt{position:relative;max-width:520px;margin:14px auto 0}
+.ps-txt.ps-swap{animation:psTxt .7s ease both .12s}
+@keyframes psTxt{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.ps-title{font-family:'Baloo Da 2',cursive;font-weight:800;font-size:27px;line-height:1.3;color:#fff}
+.ps-desc{margin-top:8px;font-size:15px;opacity:.93}
+.ps-btn{display:inline-block;margin-top:16px;background:#fff;color:#12233a;text-decoration:none;font-weight:700;
+  font-size:15px;border-radius:99px;padding:11px 26px;box-shadow:0 14px 26px -10px rgba(0,0,0,.45)}
+.ps-nav{position:absolute;left:0;right:0;bottom:24px;display:flex;justify-content:center;align-items:center;gap:14px}
+.ps-arrow{width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);
+  background:rgba(255,255,255,.08);color:#fff;font-size:19px;cursor:pointer}
+.ps-dots{display:flex;gap:8px}
+.ps-dots button{width:9px;height:9px;border-radius:99px;border:0;background:rgba(255,255,255,.4);cursor:pointer;transition:all .4s;padding:0}
+.ps-dots button.on{width:28px;background:#fff}
+@media (prefers-reduced-motion: reduce){.ps-stage{transition:none}.ps-swap{animation:none !important}}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -748,7 +792,7 @@ html.anim .rv.in{opacity:1;transform:none}
   </div>
   <div class="dv-panel" data-panel="works" hidden>
     <section>
-      <h2 class="dv-h2">কাজসমূহ</h2>
+      <h2 class="dv-h2">কাজসমূহ</h2><section class="ps-stage" data-lang="bn" data-i="0"><div class="ps-giant"></div><div class="ps-num"></div><div class="ps-visual"><div class="ps-mock"><div class="ps-bar"><i></i><i></i><i></i><span class="ps-url"></span></div><div class="ps-body"><div class="ps-logo"></div><div class="ps-line m"></div><div class="ps-line s"></div><div class="ps-line m2"></div><span class="ps-cta"></span></div></div></div><div class="ps-txt"><h3 class="ps-title"></h3><p class="ps-desc"></p><a class="ps-btn" target="_blank" rel="noopener"></a></div><div class="ps-nav"><button class="ps-arrow ps-prev" aria-label="prev">‹</button><div class="ps-dots"></div><button class="ps-arrow ps-next" aria-label="next">›</button></div></section>
       <div class="dv-card tilt"><a class="dv-work" href="https://jinnahschoolbd.com" target="_blank" rel="noopener">
         <h3>জিন্নাহ স্কুল — ওয়েবসাইট ও অফিস প্যানেল</h3>
         <p>স্কুলের সম্পূর্ণ ওয়েবসাইট, অনলাইন ভর্তি, ফলাফল ও ফি হিসাবের অফিস ম্যানেজমেন্ট সিস্টেম।</p>
@@ -876,7 +920,7 @@ html.anim .rv.in{opacity:1;transform:none}
   </div>
   <div class="dv-panel" data-panel="works" hidden>
     <section>
-      <h2 class="dv-h2">Selected Works</h2>
+      <h2 class="dv-h2">Selected Works</h2><section class="ps-stage" data-lang="en" data-i="0"><div class="ps-giant"></div><div class="ps-num"></div><div class="ps-visual"><div class="ps-mock"><div class="ps-bar"><i></i><i></i><i></i><span class="ps-url"></span></div><div class="ps-body"><div class="ps-logo"></div><div class="ps-line m"></div><div class="ps-line s"></div><div class="ps-line m2"></div><span class="ps-cta"></span></div></div></div><div class="ps-txt"><h3 class="ps-title"></h3><p class="ps-desc"></p><a class="ps-btn" target="_blank" rel="noopener"></a></div><div class="ps-nav"><button class="ps-arrow ps-prev" aria-label="prev">‹</button><div class="ps-dots"></div><button class="ps-arrow ps-next" aria-label="next">›</button></div></section>
       <div class="dv-card tilt"><a class="dv-work" href="https://jinnahschoolbd.com" target="_blank" rel="noopener">
         <h3>Jinnah School — Website &amp; Office Panel</h3>
         <p>Complete school website with online admission, results and a fee/accounts office management system.</p>
@@ -1208,6 +1252,82 @@ document.querySelectorAll('[data-cslider]').forEach(function (root) {
     es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: .1 });
   els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+<script>
+/* প্রজেক্ট স্লাইডার — দুই ভাষার ইনস্ট্যান্স */
+(function(){
+  var DATA = {
+    bn: [
+      { giant:'জিন্নাহ স্কুল', num:'০১ / ০৩', url:'jinnahschoolbd.com', logo:'জিন্নাহ স্কুল', cta:'ভর্তি চলছে',
+        title:'জিন্নাহ স্কুল — ওয়েবসাইট ও অফিস প্যানেল',
+        desc:'মাদারগঞ্জ উপজেলার প্রথম ডিজিটাল স্কুল — ভর্তি, রেজাল্ট, ফি হিসাবসহ পুরো সিস্টেম অনলাইনে।',
+        btn:'লাইভ সাইট দেখুন', link:'https://jinnahschoolbd.com' },
+      { giant:'লন্ড্রি এক্সপ্রেস', num:'০২ / ০৩', url:'laundrybd.web.app', logo:'লন্ড্রি এক্সপ্রেস', cta:'অর্ডার করুন',
+        title:'লন্ড্রি এক্সপ্রেস — অনলাইন অর্ডার সিস্টেম',
+        desc:'ঘরে বসে লন্ড্রি অর্ডার, পিকআপ-ডেলিভারি আর লাইভ ট্র্যাকিং — মাদারগঞ্জের নিজের সার্ভিস।',
+        btn:'লাইভ সাইট দেখুন', link:'https://laundrybd.web.app' },
+      { giant:'লাবনী শপ', num:'০৩ / ০৩', url:'labonishop.web.app', logo:'লাবনী শপ', cta:'কেনাকাটা করুন',
+        title:'লাবনী শপ — অনলাইন শপ',
+        desc:'মাদারগঞ্জ থেকে সারা দেশে হোম ডেলিভারি — ক্যাশ অন ডেলিভারি আর বিকাশ পেমেন্টসহ।',
+        btn:'লাইভ সাইট দেখুন', link:'https://labonishop.web.app' }
+    ],
+    en: [
+      { giant:'JINNAH SCHOOL', num:'01 / 03', url:'jinnahschoolbd.com', logo:'Jinnah School', cta:'Admissions open',
+        title:'Jinnah School — Website & Office Panel',
+        desc:'The first digital school in Madarganj Upazila — admissions, results and fee accounts, all online.',
+        btn:'Visit live site', link:'https://jinnahschoolbd.com' },
+      { giant:'LAUNDRY EXPRESS', num:'02 / 03', url:'laundrybd.web.app', logo:'Laundry Express', cta:'Order now',
+        title:'Laundry Express — Online Ordering System',
+        desc:'Order laundry from home with pickup, delivery and live tracking — Madarganj\'s own service.',
+        btn:'Visit live site', link:'https://laundrybd.web.app' },
+      { giant:'LABONI SHOP', num:'03 / 03', url:'labonishop.web.app', logo:'Laboni Shop', cta:'Shop now',
+        title:'Laboni Shop — Online Store',
+        desc:'Home delivery from Madarganj to the whole country — cash on delivery and bKash payments.',
+        btn:'Visit live site', link:'https://labonishop.web.app' }
+    ]
+  };
+  document.querySelectorAll('.ps-stage').forEach(function(stage){
+    var slides = DATA[stage.dataset.lang === 'en' ? 'en' : 'bn'];
+    var i = 0, timer = null;
+    var q = function(c){ return stage.querySelector(c); };
+    var dotsBox = q('.ps-dots');
+    slides.forEach(function(_, k){
+      var b = document.createElement('button');
+      b.addEventListener('click', function(){ go(k); restart(); });
+      dotsBox.appendChild(b);
+    });
+    function render(){
+      var s = slides[i];
+      stage.dataset.i = i;
+      q('.ps-giant').textContent = s.giant;
+      q('.ps-num').textContent = s.num;
+      q('.ps-url').textContent = s.url;
+      q('.ps-logo').textContent = s.logo;
+      q('.ps-cta').textContent = s.cta;
+      q('.ps-title').textContent = s.title;
+      q('.ps-desc').textContent = s.desc;
+      var btn = q('.ps-btn'); btn.href = s.link; btn.textContent = s.btn;
+      [q('.ps-mock'), q('.ps-txt')].forEach(function(el){
+        el.classList.remove('ps-swap'); void el.offsetWidth; el.classList.add('ps-swap');
+      });
+      Array.prototype.forEach.call(dotsBox.children, function(d, k){ d.classList.toggle('on', k === i); });
+    }
+    function go(k){ i = (k + slides.length) % slides.length; render(); }
+    function restart(){ clearInterval(timer); timer = setInterval(function(){ go(i + 1); }, 4000); }
+    q('.ps-next').addEventListener('click', function(){ go(i + 1); restart(); });
+    q('.ps-prev').addEventListener('click', function(){ go(i - 1); restart(); });
+    var x0 = null;
+    stage.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, { passive: true });
+    stage.addEventListener('touchend', function(e){
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 42) { go(i + (dx < 0 ? 1 : -1)); restart(); }
+      x0 = null;
+    }, { passive: true });
+    render(); restart();
+  });
 })();
 </script>
 </body>
